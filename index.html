@@ -372,16 +372,14 @@
 
 <!-- Contact Number - COMPACT VERSION -->
 <label style="font-weight:600;">No. Telefon: <span style="color:red">*</span></label>
-<div class="phone-container">
-  <div class="phone-prefix">+60</div>
-  <div style="display:flex;gap:5px;">
-    <input type="text" name="phone1" id="phone1" placeholder="12" maxlength="2" required
-           oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-           style="padding:10px;border-radius:6px;border:1px solid #ccc;width:60px;">
-    <input type="text" name="phone2" id="phone2" placeholder="3456789" maxlength="8" required
-           oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-           style="padding:10px;border-radius:6px;border:1px solid #ccc;flex:1;">
-  </div>
+<div class="phone-container" style="display:flex;flex-wrap:wrap;gap:6px;">
+  <input type="text" name="phone1" id="phone1" placeholder="012" maxlength="3" required
+         oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:1;min-width:60px;">
+  <input type="text" name="phone2" id="phone2" placeholder="3456789" required
+         oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:2;min-width:100px;">
+</div>
 </div>
 
 <!-- Email Address -->
@@ -727,3 +725,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
