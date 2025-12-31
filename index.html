@@ -50,27 +50,7 @@
                 color: #666;
                 font-size: 18px;
             }
-            
-            /* Contact Number fields - compact layout */
-            .phone-container {
-                display: grid !important;
-                grid-template-columns: auto 1fr;
-                gap: 5px !important;
-                align-items: center;
-            }
-            
-            .phone-container input {
-                width: 100% !important;
-                min-width: 0 !important;
-            }
-            
-            .phone-prefix {
-                text-align: center;
-                font-weight: bold;
-                color: #666;
-                padding: 0 8px;
-            }
-            
+                        
             /* Carousel adjustments for mobile */
             #imageCarousel {
                 max-width: 100% !important;
@@ -166,24 +146,6 @@
                 font-weight: bold;
                 color: #666;
                 padding: 0 5px;
-            }
-            
-            /* Contact Number fields - compact inline layout */
-            .phone-container {
-                display: flex !important;
-                align-items: center !important;
-                gap: 5px !important;
-            }
-            
-            .phone-container input {
-                flex: 1 !important;
-                min-width: 0 !important;
-            }
-            
-            .phone-prefix {
-                font-weight: bold;
-                color: #666;
-                padding: 0 8px;
             }
         }
         
@@ -370,16 +332,15 @@
          style="padding:10px;border-radius:6px;border:1px solid #ccc;">
 </div>
 
-<!-- Contact Number - COMPACT VERSION -->
+<!-- Contact Number -->
 <label style="font-weight:600;">No. Telefon: <span style="color:red">*</span></label>
-<div class="phone-container" style="display:flex;flex-wrap:wrap;gap:6px;">
+<div style="display:flex;flex-wrap:wrap;gap:6px;">
   <input type="text" name="phone1" id="phone1" placeholder="012" maxlength="3" required
          oninput="this.value=this.value.replace(/[^0-9]/g,'')"
          style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:1;min-width:60px;">
   <input type="text" name="phone2" id="phone2" placeholder="3456789" required
          oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:2;min-width:100px;">
-</div>
+         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:3;min-width:150px;">
 </div>
 
 <!-- Email Address -->
@@ -631,11 +592,11 @@ document.getElementById("leaveForm").addEventListener("submit", function(e) {
     return;
   }
   
-  // Validate phone number
-  if (payload.phone1.length !== 2 || payload.phone2.length < 7 || payload.phone2.length > 8) {
-    showStatus("⚠️ Please enter a valid phone number (format: +60 12-3456789).", "error");
-    return;
-  }
+// Validate phone number
+if (payload.phone1.length !== 3 || payload.phone2.length < 7) {
+  showStatus("⚠️ Please enter a valid phone number (format: 012-3456789).", "error");
+  return;
+}
   
   const requiredFields = ["fullname","ic1","ic2","ic3","phone1","phone2","leaveType","days","dateLeave","reason"];
   for (const field of requiredFields) {
@@ -725,4 +686,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
