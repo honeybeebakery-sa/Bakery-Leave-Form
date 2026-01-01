@@ -334,13 +334,12 @@
 
 <!-- Contact Number -->
 <label style="font-weight:600;">No. Telefon: <span style="color:red">*</span></label>
-<div style="display:flex;flex-wrap:wrap;gap:6px;">
-  <input type="text" name="phone1" id="phone1" placeholder="012" maxlength="3" required
-         oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:1;min-width:60px;">
-  <input type="text" name="phone2" id="phone2" placeholder="3456789" required
-         oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:3;min-width:150px;">
+<input type="tel" id="fullPhone" name="fullPhone" placeholder="0123456789" required
+       inputmode="numeric"
+       pattern="[0-9]{10,11}"
+       title="10-11 digit phone number (e.g., 0123456789)"
+       oninput="this.value = this.value.replace(/\D/g, '').slice(0, 11)"
+       style="padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;box-sizing:border-box;">
 </div>
 
 <!-- Email Address -->
@@ -593,8 +592,8 @@ document.getElementById("leaveForm").addEventListener("submit", function(e) {
   }
   
 // Validate phone number
-if (payload.phone1.length !== 3 || payload.phone2.length < 7) {
-  showStatus("⚠️ Please enter a valid phone number (format: 012-3456789).", "error");
+if (payload.phone.length < 10 || payload.phone.length > 11) {
+  showStatus("⚠️ Please enter a valid 10-11 digit phone number.", "error");
   return;
 }
   
@@ -666,6 +665,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
 
 
