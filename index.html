@@ -335,12 +335,9 @@
 <!-- Contact Number -->
 <label style="font-weight:600;">No. Telefon: <span style="color:red">*</span></label>
 <div style="display:flex;flex-wrap:wrap;gap:6px;">
-  <input type="text" name="phone1" id="phone1" placeholder="012" maxlength="3" required
+  <input type="text" name="phone1" id="phone1" placeholder="0123456789" required
          oninput="this.value=this.value.replace(/[^0-9]/g,'')"
          style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:1;min-width:60px;">
-  <input type="text" name="phone2" id="phone2" placeholder="3456789" required
-         oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-         style="padding:10px;border-radius:8px;border:1px solid #ccc;flex:3;min-width:150px;">
 </div>
 
 <!-- Email Address -->
@@ -666,6 +663,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
 
 
