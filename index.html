@@ -311,11 +311,39 @@
   <!-- Form -->
   <form id="leaveForm" style="display:flex;flex-direction:column;gap:14px;" onsubmit="submitForm(event)">
 
-    <!-- Full Name -->
+<!-- Full Name -->
 <label for="fullname" style="font-weight:600;">Nama Penuh <span style="color:red;">*</span></label>
-<input type="text" id="fullname" name="fullname" required
-       placeholder="ISI NAMA PENUH ANDA DI SINI..."
-       style="text-transform:uppercase;padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;box-sizing:border-box;">
+<select id="fullname" name="fullname" required
+        style="padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;box-sizing:border-box;font-size:16px;">
+  <option value="" disabled selected>Pilih Nama Anda</option>
+  <option value="AHMAD BIN ABDULLAH">ALICESIA DIANA ANAK BUNJAI</option>
+  <option value="SITI BINTI MOHAMED">BEATREA SUDAN ANAK ALI</option>
+  <option value="MOHAMMAD BIN ALI">CHIN SIEW MEI</option>
+  <option value="NURUL AINI BINTI HASSAN">DAYANG ERINNE FASHA BINTI ABANG HUSSINI</option>
+  <option value="FAISAL BIN ISMAIL">DAYANG NURFARZRIN BT AWANG ARSHAD</option>
+  <option value="FAISAL BIN ISMAIL">DIEH TECK JIAN</option>
+  <option value="FAISAL BIN ISMAIL">ELENNEY ANAK EMPENIT</option>
+  <option value="FAISAL BIN ISMAIL">ELISSIA CHOO</option>
+  <option value="FAISAL BIN ISMAIL">EMELIA CECILIA MADONG ANAK MAMBANG</option>
+  <option value="FAISAL BIN ISMAIL">MARSYELLA SULIE ANAK LANGGANG</option>
+  <option value="FAISAL BIN ISMAIL">MUSTAQIMAH BINTI RAHMAT MOHAMMAD</option>
+  <option value="FAISAL BIN ISMAIL">NOR AIDA BINTI ABDULLAH</option>
+  <option value="FAISAL BIN ISMAIL">NUR SAFIYA SUZIANA BINTI LAMIT</option>
+  <option value="FAISAL BIN ISMAIL">NUR ZARINA BINTI SHUKRI</option>
+  <option value="FAISAL BIN ISMAIL">NURAIN LEE BINTI MOHD AFFANDI LEE</option>
+  <option value="FAISAL BIN ISMAIL">NURUL AIDA BINTI MOHD FADZIL</option>
+  <option value="FAISAL BIN ISMAIL">NURUL AINN BINTI MOHAMMAD TAUFIQ</option>
+  <option value="FAISAL BIN ISMAIL">NURUL FAQIHAH BT MAS MOHAMMAD HUSSEN</option>
+  <option value="FAISAL BIN ISMAIL">ROSLIND ASIE ANAK GATIS</option>
+  <option value="FAISAL BIN ISMAIL">SIM MONG SIANG</option>
+  <option value="FAISAL BIN ISMAIL">STEPHANIE ANGELS ANAK WILSON</option>
+  <option value="FAISAL BIN ISMAIL">SURIATIE BINTI JAMAIN</option>
+  <option value="FAISAL BIN ISMAIL">SUZALIN ANAK LINGGA</option>
+  <option value="FAISAL BIN ISMAIL">SYAIMARUDEN BIN MUHAMMAD </option>
+  <option value="FAISAL BIN ISMAIL">TRAKIENNA ANAK DAVID</option>
+  <option value="FAISAL BIN ISMAIL">WENDY CHONG BAO JUN</option>
+  <option value="FAISAL BIN ISMAIL">YEW CHOK KING</option>
+</select>
 
     <!-- IC Number - COMPACT VERSION -->
 <label style="font-weight:600;">No. Kad Pengenalan (I.C.): <span style="color:red">*</span></label>
@@ -505,13 +533,6 @@ function initCarousel() {
 
 // Replace YOUR_WEB_APP_URL_HERE with your deployed Apps Script Web App URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbxVNpGu237xOyVYqoH1GNByEdRByhWwrrVuRbMDsYRkNU02m-HK1lBPAxKmao4DkvQuHg/exec";
-
-// Auto-uppercase Full Name, only letters + space
-document.getElementById("fullname").addEventListener("input", function() {
-  this.value = this.value.toUpperCase()
-                   .replace(/[^A-Z\s]/g, "")
-                   .trimStart();
-});
 
 // Auto-resize textareas (smooth expand)
 function autoResize(textarea) {
